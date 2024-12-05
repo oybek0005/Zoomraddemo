@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zoomrad demo</string>
+
+    <!-- ////////////////////   AUTH    //////////////////////////   -->
+    <string name="password" >Enter the code</string>
+    <string name="firstname" >Your first name</string>
+    <string name="lastname" >Your last name</string>
+    <string name="male" >Male</string>
+    <string name="female" >Female</string>
+    <string name="bird" >YYYY/MM/DD</string>
+    <string name="next">Next</string>
+
+
+</resources>

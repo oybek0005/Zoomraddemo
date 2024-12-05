@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.splash.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_screenLanguage"
+            app:destination="@id/screenLanguage"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/screenLanguage"
+        android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.language.ScreenLanguage"
+        android:label="ScreenLanguage" >
+        <action
+            android:id="@+id/action_screenLanguage_to_registerScreen"
+            app:destination="@id/registerScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.register.RegisterScreen"
+        android:label="RegisterScreen" >
+        <action
+            android:id="@+id/action_registerScreen_to_verifyCodeScreen"
+            app:destination="@id/verifyCodeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyCodeScreen"
+        android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.verifycode.VerifyCodeScreen"
+        android:label="VerifyCodeScreen" />
+</navigation>

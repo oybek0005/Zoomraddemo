@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zoomrad demo</string>
+
+    <!-- ////////////////////   AUTH    //////////////////////////   -->
+    <string name="password" >Введите код</string>
+    <string name="firstname" >Ваше имя</string>
+    <string name="lastname" >Ваша фамилия</string>
+    <string name="male" >Женщина</string>
+    <string name="female" >Мужчина</string>
+    <string name="bird" >ГГГГ/ММ/ДД</string>
+    <string name="next">Далее</string>
+
+</resources>

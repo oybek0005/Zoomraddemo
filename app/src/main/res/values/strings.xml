@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Zoomrad demo</string>
+    <string name="Ruscha" translatable="false">Русский</string>
+
+
+<!-- ////////////////////   AUTH    //////////////////////////   -->
+    <string name="password" >Kodni kiriting</string>
+    <string name="firstname" >Ismingiz</string>
+    <string name="lastname" >Familiyangiz</string>
+    <string name="male" >Ayol</string>
+    <string name="female" >Erkak</string>
+    <string name="bird" >YYYY/OO/KK</string>
+    <string name="next">Keyingi</string>
+
+</resources>
