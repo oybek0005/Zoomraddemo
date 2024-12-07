@@ -33,5 +33,16 @@
     <fragment
         android:id="@+id/verifyCodeScreen"
         android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.verifycode.VerifyCodeScreen"
-        android:label="VerifyCodeScreen" />
+        android:label="VerifyCodeScreen" >
+        <action
+            android:id="@+id/action_verifyCodeScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.oybek0005.zoomraddemo.presentation.screen.home.HomeScreen"
+        android:label="HomeScreen" />
 </navigation>

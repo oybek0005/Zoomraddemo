@@ -12,8 +12,8 @@ Created by Oybek 5:42 PM 12/5/2024
 
 @Singleton
 class RegisterDirection @Inject constructor(private val appNavigator: AppNavigator):RegisterContract.Directions {
-    override suspend fun openNextScreen() {
-        appNavigator.navigateTo(R.id.action_registerScreen_to_verifyCodeScreen)
+    override suspend fun openNextScreen(number:String) {
+        appNavigator.navigateTo(RegisterScreenDirections.actionRegisterScreenToVerifyCodeScreen(number))
     }
 
     override suspend fun backScreen() {

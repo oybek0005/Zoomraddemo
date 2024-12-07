@@ -8,6 +8,8 @@ import uz.oybek0005.zoomraddemo.presentation.screen.auth.language.LanguageContra
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.language.LanguageDirection
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.register.RegisterContract
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.register.RegisterDirection
+import uz.oybek0005.zoomraddemo.presentation.screen.auth.verifycode.VerifyCodeContract
+import uz.oybek0005.zoomraddemo.presentation.screen.auth.verifycode.VerifyDirection
 
 @Module
 @InstallIn(ViewModelComponent::class)
@@ -18,6 +20,9 @@ interface DirectionModule {
 
     @Binds
     fun bindVerifyCodeDirection(impl: RegisterDirection):RegisterContract.Directions
+
+    @Binds
+    fun bindHomeDirection(impl: VerifyDirection):VerifyCodeContract.Directions
 }
 
 

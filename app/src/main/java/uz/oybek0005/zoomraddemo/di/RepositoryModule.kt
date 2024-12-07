@@ -4,8 +4,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import uz.oybek0005.zoomraddemo.domain.auth.AuthRepository
-import uz.oybek0005.zoomraddemo.domain.auth.impl.AuthRepositoryImpl
+import uz.oybek0005.zoomraddemo.domain.repository.auth.AuthRepository
+import uz.oybek0005.zoomraddemo.domain.repository.auth.impl.AuthRepositoryImpl
 
 @Module
 @InstallIn(SingletonComponent::class)

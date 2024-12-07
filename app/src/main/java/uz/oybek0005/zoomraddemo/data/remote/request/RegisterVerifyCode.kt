@@ -6,5 +6,6 @@ Created by Oybek 5:28 PM 12/5/2024
  */
 
 data class RegisterVerifyCode(
-     val code:String
+     val token:String,
+     val code:String,
 )
