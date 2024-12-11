@@ -23,19 +23,25 @@ Created by Oybek 5:47 PM 12/5/2024
 
 @AndroidEntryPoint
 class VerifyCodeScreen:Fragment(R.layout.screen_verify_code) {
-    private val binding: ScreenVerifyCodeBinding by viewBinding()
     private val viewModel: VerifyCodeContract.ViewModel by viewModels<VerifyCodeViewModel>()
+    private val binding: ScreenVerifyCodeBinding by viewBinding()
     private val navArgs:VerifyCodeScreenArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        val isSign = navArgs.isSignIn
         setUpTextWatcher()
+        binding.btnNext.setOnClickListener {
+            viewModel.verifySMSCode(binding.textPassword.text.toString(),isSign)
+        }
+
+
         binding.textNumber.text = "+998${navArgs.phoneNumber}"
-
-
         lifecycleScope.launch {
             viewModel.txtTimerState.collect { formattedTime ->
                 binding.chronometr.text = formattedTime
             }
+            viewModel.startTimer()
         }
 
         binding.startTime.setOnClickListener {
@@ -43,7 +49,7 @@ class VerifyCodeScreen:Fragment(R.layout.screen_verify_code) {
                 if(binding.chronometr.text.toString().isEmpty()){
                     viewModel.replaceCode()
                     viewModel.startTimer()
-                    viewModel.verifySMSCode(binding.textPassword.text.toString())
+                    viewModel.verifySMSCode(binding.textPassword.text.toString(),isSign)
                 }
             }
         }
@@ -51,15 +57,11 @@ class VerifyCodeScreen:Fragment(R.layout.screen_verify_code) {
     }
 
     private fun setUpTextWatcher() {
-        binding.btnNext.setOnClickListener {
-            viewModel.verifySMSCode(binding.textPassword.text.toString())
-        }
         binding.textPassword.doOnTextChanged { text, _, _, _ ->
             val isTextValid = ((text.toString().length) == 6)
             binding.btnNext.isEnabled = isTextValid
             if (isTextValid) {
                 binding.btnNext.setBackgroundResource(R.drawable.bg_enabled_register)
-
             }else {
                 binding.btnNext.setBackgroundResource(R.drawable.bg_disable_register)
             }

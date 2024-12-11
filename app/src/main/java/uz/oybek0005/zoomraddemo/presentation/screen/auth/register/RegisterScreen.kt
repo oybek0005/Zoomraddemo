@@ -5,15 +5,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import uz.oybek0005.zoomraddemo.R
 import uz.oybek0005.zoomraddemo.data.remote.request.RegisterUserRequest
-import uz.oybek0005.zoomraddemo.databinding.ScreenSignInBinding
+import uz.oybek0005.zoomraddemo.databinding.ScreenSignUpBinding
 
 
 /**
@@ -21,8 +19,8 @@ Created by Oybek 12:21 PM 12/5/2024
  */
 
 @AndroidEntryPoint
-class RegisterScreen : Fragment(R.layout.screen_sign_in) {
-    private val binding: ScreenSignInBinding by viewBinding()
+class RegisterScreen : Fragment(R.layout.screen_sign_up) {
+    private val binding: ScreenSignUpBinding by viewBinding()
     private val viewModel: RegisterViewModel by viewModels()
     private var  gender = ""
 

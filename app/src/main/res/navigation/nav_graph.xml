@@ -18,9 +18,10 @@
         android:id="@+id/screenLanguage"
         android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.language.ScreenLanguage"
         android:label="ScreenLanguage" >
+
         <action
-            android:id="@+id/action_screenLanguage_to_registerScreen"
-            app:destination="@id/registerScreen" />
+            android:id="@+id/action_screenLanguage_to_signInScreen"
+            app:destination="@id/signInScreen" />
     </fragment>
     <fragment
         android:id="@+id/registerScreen"
@@ -40,9 +41,24 @@
         <argument
             android:name="phoneNumber"
             app:argType="string" />
+        <argument
+            android:name="isSignIn"
+            app:argType="boolean"
+            android:defaultValue="true " />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
         android:name="uz.oybek0005.zoomraddemo.presentation.screen.home.HomeScreen"
         android:label="HomeScreen" />
+    <fragment
+        android:id="@+id/signInScreen"
+        android:name="uz.oybek0005.zoomraddemo.presentation.screen.auth.signin.SignInScreen"
+        android:label="SignInScreen" >
+        <action
+            android:id="@+id/action_signInScreen_to_verifyCodeScreen"
+            app:destination="@id/verifyCodeScreen" />
+        <action
+            android:id="@+id/action_signInScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+    </fragment>
 </navigation>

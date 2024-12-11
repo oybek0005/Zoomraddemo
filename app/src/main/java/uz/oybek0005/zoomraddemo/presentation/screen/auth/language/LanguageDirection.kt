@@ -13,7 +13,7 @@ Created by Oybek 5:58 PM 12/4/2024
 @Singleton
 class LanguageDirection @Inject constructor(private val appNavigator: AppNavigator):LanguageContract.Direction{
     override suspend fun moveToRegisterScreen() {
-        appNavigator.navigateTo(R.id.action_screenLanguage_to_registerScreen)
+        appNavigator.navigateTo(R.id.action_screenLanguage_to_signInScreen)
     }
 
     override suspend fun moveToBack() {

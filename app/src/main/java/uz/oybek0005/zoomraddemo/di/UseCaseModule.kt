@@ -6,8 +6,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import uz.oybek0005.zoomraddemo.domain.usecase.RegisterVerifyCodeUseCase
 import uz.oybek0005.zoomraddemo.domain.usecase.ResendCodeUseCase
+import uz.oybek0005.zoomraddemo.domain.usecase.SignInUseCase
 import uz.oybek0005.zoomraddemo.domain.usecase.impl.RegisterVerifyCodeUseCaseImpl
 import uz.oybek0005.zoomraddemo.domain.usecase.impl.ResendCodeUseCaseImpl
+import uz.oybek0005.zoomraddemo.domain.usecase.impl.SignInUseCaseImpl
 
 
 /**
@@ -22,4 +24,7 @@ interface UseCaseModule {
 
     @Binds
     fun resendCode(impl:ResendCodeUseCaseImpl):ResendCodeUseCase
+
+    @Binds
+    fun signIn(impl:SignInUseCaseImpl):SignInUseCase
 }

@@ -14,8 +14,12 @@ Created by Oybek 7:44 PM 12/6/2024
 class RegisterVerifyCodeUseCaseImpl @Inject constructor(
     private val repository: AuthRepository
 ):RegisterVerifyCodeUseCase {
-    override suspend fun invoke(sms:String): Result<Unit>? {
-        return repository.registerVerifyCode(sms).firstOrNull()
+    override suspend fun invoke(sms:String,isSignIn:Boolean): Result<Unit>? {
+        return if(!isSignIn){
+            repository.registerVerifyCode(sms).firstOrNull()
+        }else{
+            repository.signInVerifyCode(sms).firstOrNull()
+        }
     }
 
 

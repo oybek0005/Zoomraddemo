@@ -35,17 +35,15 @@ class VerifyCodeViewModel @Inject constructor(
 ):VerifyCodeContract.ViewModel,ViewModel() {
     override val message = MutableLiveData<String>()
     override val txtTimerState = MutableStateFlow("")
+
+
     override fun clickVerifyScreen() {
         viewModelScope.launch {
             direction.openNextScreen()
         }
     }
 
-    init {
-        viewModelScope.launch {
-            startTimer()
-        }
-    }
+
 
     override fun clickBack() {
         viewModelScope.launch {
@@ -53,12 +51,13 @@ class VerifyCodeViewModel @Inject constructor(
         }
     }
 
-    override fun verifySMSCode(verifyCode: String) {
+    override fun verifySMSCode(verifyCode: String,isSignIn:Boolean) {
         viewModelScope.launch {
-            val result = useCaseVerify.invoke(verifyCode)
+            val result = useCaseVerify.invoke(verifyCode,isSignIn)
             if (result?.isSuccess == true) {
                 clickVerifyScreen()
-            }else {
+            }else{
+                Log.d("AAAC", result?.isSuccess.toString())
                 message.postValue(result?.exceptionOrNull()?.message ?: "")
             }
         }

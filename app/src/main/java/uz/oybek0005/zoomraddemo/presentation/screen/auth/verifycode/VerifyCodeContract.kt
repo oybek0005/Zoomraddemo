@@ -12,7 +12,7 @@ Created by Oybek 3:05 PM 12/6/2024
 interface VerifyCodeContract {
 
     interface ViewModel{
-        fun verifySMSCode(verifyCode: String)
+        fun verifySMSCode(verifyCode: String,isSignIn:Boolean)
         val message: LiveData<String>
         fun clickVerifyScreen()
         fun clickBack()

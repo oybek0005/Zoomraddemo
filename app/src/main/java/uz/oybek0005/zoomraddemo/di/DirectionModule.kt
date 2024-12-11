@@ -8,6 +8,8 @@ import uz.oybek0005.zoomraddemo.presentation.screen.auth.language.LanguageContra
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.language.LanguageDirection
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.register.RegisterContract
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.register.RegisterDirection
+import uz.oybek0005.zoomraddemo.presentation.screen.auth.signin.SignInContract
+import uz.oybek0005.zoomraddemo.presentation.screen.auth.signin.SignInDirection
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.verifycode.VerifyCodeContract
 import uz.oybek0005.zoomraddemo.presentation.screen.auth.verifycode.VerifyDirection
 
@@ -23,6 +25,9 @@ interface DirectionModule {
 
     @Binds
     fun bindHomeDirection(impl: VerifyDirection):VerifyCodeContract.Directions
+
+    @Binds
+    fun bindSignInToVerify(impl:SignInDirection):SignInContract.Direction
 }
 
 

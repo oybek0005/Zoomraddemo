@@ -6,5 +6,5 @@ Created by Oybek 7:40 PM 12/6/2024
  */
 
 interface RegisterVerifyCodeUseCase {
-    suspend operator fun invoke(sms:String):Result<Unit>?
+    suspend fun invoke(sms: String, isSignIn: Boolean): Result<Unit>?
 }
